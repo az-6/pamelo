@@ -402,10 +402,13 @@ export default function Component() {
 
           <Button
             size="lg"
-            className="bg-white text-green-600 hover:bg-gray-100 px-12 py-4 text-xl font-bold rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 mb-8"
+            className="bg-white text-green-600 hover:bg-gray-100 px-6 md:px-12 py-4 text-lg md:text-xl font-bold rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 mb-8"
           >
-            <MessageCircle className="w-6 h-6 mr-3" />
-            DAPATKAN PAMELIA VIA WHATSAPP SEKARANG
+            <MessageCircle className="w-6 h-6 mr-2 md:mr-3" />
+            <span className="hidden sm:inline">
+              DAPATKAN PAMELIA VIA WHATSAPP SEKARANG
+            </span>
+            <span className="sm:hidden">PESAN VIA WHATSAPP</span>
           </Button>
 
           <div className="space-y-6 mt-8">
