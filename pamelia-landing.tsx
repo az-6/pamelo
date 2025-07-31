@@ -16,23 +16,101 @@ import Image from "next/image";
 export default function Component() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-50 to-yellow-50 py-12 md:py-16 lg:py-24">
+      {/* Hero Section with Integrated Logos */}
+      <section className="relative bg-gradient-to-br from-green-50 to-yellow-50 py-8 md:py-12 lg:py-16">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          {/* Partner/Certification Logos */}
+          <div className="mb-6 md:mb-8 lg:mb-10">
+            <div className="flex flex-nowrap justify-center items-center gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto overflow-x-auto">
+              {/* Logo 1 - TUT */}
+              <div className="flex items-center justify-center p-1 md:p-2 flex-shrink-0">
+                <Image
+                  src="/tut.png?height=80&width=160"
+                  alt="TUT Logo"
+                  width={160}
+                  height={80}
+                  className="w-auto h-8 md:h-8 lg:h-10 max-w-full object-contain"
+                />
+              </div>
+
+              {/* Logo 2 - DIKTI */}
+              <div className="flex items-center justify-center p-1 md:p-2 flex-shrink-0">
+                <Image
+                  src="/dikti.png?height=60&width=130"
+                  alt="DIKTI Logo"
+                  width={130}
+                  height={60}
+                  className="w-auto h-6 md:h-6 lg:h-8 max-w-full object-contain"
+                />
+              </div>
+
+              {/* Logo 3 - BELMAWA */}
+              <div className="flex items-center justify-center p-1 md:p-2 flex-shrink-0">
+                <Image
+                  src="/belmawa.png?height=100&width=200"
+                  alt="BELMAWA Logo"
+                  width={200}
+                  height={100}
+                  className="w-auto h-12 md:h-16 lg:h-20 max-w-full object-contain"
+                />
+              </div>
+
+              {/* Logo 4 - P2MW */}
+              <div className="flex items-center justify-center p-1 md:p-2 flex-shrink-0">
+                <Image
+                  src="/p2mw.png?height=80&width=160"
+                  alt="P2MW Logo"
+                  width={160}
+                  height={80}
+                  className="w-auto h-10 md:h-12 lg:h-16 max-w-full object-contain"
+                />
+              </div>
+
+              {/* Logo 5 - Kampus */}
+              <div className="flex items-center justify-center p-1 md:p-2 flex-shrink-0">
+                <Image
+                  src="/kampus.png?height=80&width=160"
+                  alt="Kampus Logo"
+                  width={160}
+                  height={80}
+                  className="w-auto h-10 md:h-12 lg:h-16 max-w-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-8 items-center">
             <div className="space-y-4 md:space-y-6 text-center lg:text-left">
+              {/* Product Logo */}
+              <div className="flex justify-center lg:justify-start">
+                <div className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full bg-white shadow-lg flex items-center justify-center mb-2">
+                  <Image
+                    src="/logo.png?height=100&width=100"
+                    alt="PAMELIA Product Logo"
+                    width={100}
+                    height={100}
+                    className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full object-contain"
+                  />
+                </div>
+              </div>
               <Badge className="bg-green-100 text-green-800 hover:bg-green-100 mx-auto lg:mx-0 w-fit">
                 100% Bahan Alami
               </Badge>
               <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
-                Bebas Lemak & Bau Amis,
-                <span className="text-green-600"> Aman di Tangan</span>
+                PAMELIA Dishwashing Soap,
+                <span className="text-green-600">
+                  {" "}
+                  Peluntur Lemak Membandel Ramah Lingkungan
+                </span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                Temukan Kekuatan Alami PAMELIA
+                Bebas Lemak & Bau Amis, Aman di Tangan
               </p>
               <p className="text-base md:text-lg text-gray-500">
                 Sabun Cuci Piring Alami, Diformulasikan Tanpa SLS/SLES
+              </p>
+              <p className="text-base md:text-lg text-gray-600 italic">
+                Temukan Kekuatan Alami PAMELIA
               </p>
               <Button
                 size="lg"
@@ -53,6 +131,59 @@ export default function Component() {
               </div>
               <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 bg-yellow-400 rounded-full p-2 md:p-4 shadow-lg">
                 <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-white" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About PAMELIA Section */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 md:mb-8">
+              Mengapa Memilih PAMELIA?
+            </h2>
+
+            <div className="bg-gradient-to-br from-green-50 to-yellow-50 rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow-lg">
+              <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-4 md:mb-6">
+                Produk kami adalah sabun cuci piring yang berbahan dasar alami
+                dari kulit jeruk pamelo. Sabun cuci piring termasuk dalam
+                perbekalan kesehatan rumah tangga (PKRT), maka dari itu konsep
+                dari produk kami disesuaikan dengan kebutuhan masyarakat akan
+                sabun cuci piring alami tanpa bahan kimia yang mampu
+                menghilangkan noda membandel.
+              </p>
+
+              <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-4 md:mb-6">
+                Dengan dua varian aroma yaitu original dan ekstrak daun kemangi.
+                Sejalan dengan hal tersebut, banyak dari masyarakat yang
+                mengalami iritasi pada kulit setelah menggunakan sabun cuci
+                piring dikarenakan kandungan bahan kimia yang terdapat pada
+                sabun tersebut.
+              </p>
+
+              <div className="bg-white rounded-xl md:rounded-2xl p-4 md:p-6 shadow-md border-l-4 border-green-500">
+                <p className="text-base md:text-lg text-gray-800 leading-relaxed font-medium">
+                  <span className="text-green-600 font-bold">PAMELIA</span>{" "}
+                  hadir sebagai produk inovatif yang tidak hanya
+                  <span className="text-green-600 font-semibold">
+                    {" "}
+                    aman bagi kulit
+                  </span>
+                  , tetapi juga
+                  <span className="text-green-600 font-semibold">
+                    {" "}
+                    ramah lingkungan
+                  </span>{" "}
+                  serta
+                  <span className="text-green-600 font-semibold">
+                    {" "}
+                    bernilai ekonomis
+                  </span>
+                  , sehingga dapat menjadi solusi yang tepat untuk mengatasi
+                  masalah tersebut.
+                </p>
               </div>
             </div>
           </div>
@@ -408,76 +539,126 @@ export default function Component() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Di Balik PAMELIA: Tim Inovator Kami
             </h2>
+            <p className="text-base md:text-lg text-gray-600 px-4 mb-8">
+              PAMELIA lahir dari semangat kolaborasi tim mahasiswa program P2MW
+              yang bersemangat menciptakan solusi alami untuk keluarga Indonesia
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
-            {/* Left Column - Team Photo */}
-            <div className="order-2 lg:order-1">
-              <div className="relative">
-                <Image
-                  src="/pfp.jpg?height=400&width=500"
-                  alt="Tim PAMELIA - Dosen dan Mahasiswa P2MW"
-                  width={500}
-                  height={400}
-                  className="w-full h-auto rounded-xl md:rounded-2xl shadow-2xl"
-                />
-                <div className="absolute -bottom-2 -right-2 md:-bottom-4 md:-right-4 bg-green-500 rounded-full p-2 md:p-4 shadow-lg">
-                  <Heart className="w-6 h-6 md:w-8 md:h-8 text-white" />
+          {/* Team Members Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
+            {/* Team Member 1 */}
+            <div className="bg-white rounded-xl md:rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="relative mb-4">
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto overflow-hidden shadow-lg">
+                  <Image
+                    src="/pfp3.jpg?height=100&width=100"
+                    alt="Anggota Tim 1"
+                    width={100}
+                    height={100}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 bg-blue-500 rounded-full p-1 md:p-2 shadow-lg">
+                  <Heart className="w-3 h-3 md:w-4 md:h-4 text-white" />
                 </div>
               </div>
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                Triana Rizqi Amelia
+              </h3>
+              <p className="text-sm md:text-base text-blue-600 font-medium mb-2">
+                Chief Executive Officer
+              </p>
+              <p className="text-xs md:text-sm text-gray-600">
+                Pendidikan Guru Sekolah Dasar
+              </p>
             </div>
 
-            {/* Right Column - Team Info */}
-            <div className="order-1 lg:order-2 space-y-4 md:space-y-6">
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
-                Sebuah Inovasi dari Semangat Kolaborasi
+            {/* Team Member 2 */}
+            <div className="bg-white rounded-xl md:rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="relative mb-4">
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto overflow-hidden shadow-lg">
+                  <Image
+                    src="/pfp4.jpg?height=100&width=100"
+                    alt="Anggota Tim 2"
+                    width={100}
+                    height={100}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 bg-green-500 rounded-full p-1 md:p-2 shadow-lg">
+                  <Sparkles className="w-3 h-3 md:w-4 md:h-4 text-white" />
+                </div>
+              </div>
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                Ira Khoirunnisa
               </h3>
-
-              <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">
-                PAMELIA lahir dari semangat kolaborasi tim mahasiswa program
-                P2MW yang, di bawah bimbingan dosen berpengalaman, bersemangat
-                menciptakan solusi alami untuk kebutuhan sehari-hari keluarga
-                Indonesia.
+              <p className="text-sm md:text-base text-green-600 font-medium mb-2">
+                Chief Financial Officer
               </p>
+              <p className="text-xs md:text-sm text-gray-600">Manajemen</p>
+            </div>
 
-              <div className="space-y-3 md:space-y-4">
-                <div className="bg-white rounded-lg p-3 md:p-4 shadow-md border-l-4 border-blue-500">
-                  <h4 className="font-bold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">
-                    Pembimbing:
-                  </h4>
-                  <p className="text-gray-700 text-sm md:text-base">
-                    [Nama Dosen]
-                  </p>
+            {/* Team Member 3 */}
+            <div className="bg-white rounded-xl md:rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="relative mb-4">
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto overflow-hidden shadow-lg">
+                  <Image
+                    src="/pfp5.jpg?height=100&width=100"
+                    alt="Anggota Tim 3"
+                    width={100}
+                    height={100}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-
-                <div className="bg-white rounded-lg p-3 md:p-4 shadow-md border-l-4 border-green-500">
-                  <h4 className="font-bold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">
-                    Ketua Tim:
-                  </h4>
-                  <p className="text-gray-700 text-sm md:text-base">
-                    [Nama Mahasiswa]
-                  </p>
-                </div>
-
-                <div className="bg-white rounded-lg p-3 md:p-4 shadow-md border-l-4 border-yellow-500">
-                  <h4 className="font-bold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">
-                    Anggota Tim:
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 md:gap-2 text-gray-700 text-sm md:text-base">
-                    <p>[Nama Mahasiswa 1]</p>
-                    <p>[Nama Mahasiswa 2]</p>
-                    <p>[Nama Mahasiswa 3]</p>
-                    <p>[Nama Mahasiswa 4]</p>
-                  </div>
+                <div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 bg-yellow-500 rounded-full p-1 md:p-2 shadow-lg">
+                  <Leaf className="w-3 h-3 md:w-4 md:h-4 text-white" />
                 </div>
               </div>
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                Bagus Stiawan Rahmadhon
+              </h3>
+              <p className="text-sm md:text-base text-yellow-600 font-medium mb-2">
+                Chief Operating Officer
+              </p>
+              <p className="text-xs md:text-sm text-gray-600">
+                Teknik Industri
+              </p>
+            </div>
 
-              <div className="flex items-center space-x-2 text-green-600">
-                <Sparkles className="w-4 h-4 md:w-5 md:h-5" />
-                <span className="font-medium text-sm md:text-base">
-                  Program P2MW - Inovasi untuk Indonesia
-                </span>
+            {/* Team Member 4 */}
+            <div className="bg-white rounded-xl md:rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="relative mb-4">
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto overflow-hidden shadow-lg">
+                  <Image
+                    src="/pfp2.jpg?height=100&width=100"
+                    alt="Anggota Tim 4"
+                    width={100}
+                    height={100}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 bg-pink-500 rounded-full p-1 md:p-2 shadow-lg">
+                  <Star className="w-3 h-3 md:w-4 md:h-4 text-white" />
+                </div>
               </div>
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                Atina Risqiyana
+              </h3>
+              <p className="text-sm md:text-base text-pink-600 font-medium mb-2">
+                Chief Marketing Officer
+              </p>
+              <p className="text-xs md:text-sm text-gray-600">Manajemen</p>
+            </div>
+          </div>
+
+          {/* Program Badge */}
+          <div className="text-center mt-8 md:mt-12">
+            <div className="inline-flex items-center space-x-2 bg-white rounded-full px-6 py-3 shadow-lg">
+              <Sparkles className="w-5 h-5 text-green-600" />
+              <span className="font-bold text-green-600 text-sm md:text-base">
+                Program P2MW - Inovasi untuk Indonesia
+              </span>
             </div>
           </div>
         </div>
