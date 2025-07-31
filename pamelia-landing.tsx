@@ -415,7 +415,7 @@ export default function Component() {
             <div className="order-2 lg:order-1">
               <div className="relative">
                 <Image
-                  src="/placeholder.svg?height=400&width=500"
+                  src="/pfp.jpg?height=400&width=500"
                   alt="Tim PAMELIA - Dosen dan Mahasiswa P2MW"
                   width={500}
                   height={400}
