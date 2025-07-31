@@ -496,7 +496,7 @@ export default function Component() {
 
           <Button
             size="lg"
-            className="bg-white text-green-600 hover:bg-gray-100 px-6 md:px-12 py-4 text-lg md:text-xl font-bold rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 mb-6 md:mb-8 w-full sm:w-auto max-w-sm mx-auto"
+            className="bg-white text-green-600 hover:bg-gray-100 px-6 md:px-12 py-4 text-lg md:text-xl font-bold rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 mb-6 md:mb-8 w-full sm:w-auto"
           >
             <MessageCircle className="w-6 h-6 mr-2 md:mr-3" />
             <span className="hidden sm:inline">
@@ -534,22 +534,22 @@ export default function Component() {
                 E-commerce:
               </p>
               <div className="flex space-x-3">
-                <div className="bg-white rounded-lg p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+                <div className="bg-white rounded-lg p-3 md:p-4 shadow-lg hover:shadow-xl transition-shadow cursor-pointer flex items-center justify-center min-w-[100px] md:min-w-[120px]">
                   <Image
                     src="tokped.png"
                     alt="Tokopedia"
-                    width={60}
-                    height={20}
-                    className="w-16 h-5 md:w-20 md:h-6"
+                    width={100}
+                    height={30}
+                    className="w-auto h-6 md:h-7 max-w-[90px] md:max-w-[110px] object-contain"
                   />
                 </div>
-                <div className="bg-white rounded-lg p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+                <div className="bg-white rounded-lg p-3 md:p-4 shadow-lg hover:shadow-xl transition-shadow cursor-pointer flex items-center justify-center min-w-[100px] md:min-w-[120px]">
                   <Image
                     src="shoope.png"
                     alt="Shopee"
-                    width={60}
-                    height={20}
-                    className="w-16 h-5 md:w-20 md:h-6"
+                    width={100}
+                    height={30}
+                    className="w-auto h-6 md:h-7 max-w-[90px] md:max-w-[110px] object-contain"
                   />
                 </div>
               </div>
