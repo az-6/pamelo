@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -115,6 +117,12 @@ export default function Component() {
               <Button
                 size="lg"
                 className="bg-green-600 hover:bg-green-700 text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                onClick={() => {
+                  document.getElementById("keunggulan")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
               >
                 Pelajari Keunggulannya
               </Button>
@@ -191,62 +199,99 @@ export default function Component() {
       </section>
 
       {/* Problem & Solution */}
-      <section className="py-12 md:py-16 bg-gray-50">
+      <section id="keunggulan" className="py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          {/* Problem */}
+          {/* Hook */}
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Kulit Tangan Kering Setelah Mencuci Piring?
+              Bukan Sekadar Sabun Cuci Piring. Ini Kebaikan Alam untuk Dapur dan
+              Bumi Anda.
             </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
-              Sabun biasa seringkali mengandung bahan kimia keras yang dapat
-              mengiritasi kulit dan berbahaya jika tertelan.
+            <p className="text-lg md:text-xl text-green-600 font-semibold mb-6">
+              5 Keunggulan Utama PAMELIA
             </p>
           </div>
 
-          {/* Solution */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-6 md:p-8 text-center">
+          {/* 5 Keunggulan */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
+            {/* Keunggulan 1 */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 lg:col-span-1">
+              <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
                 <div className="bg-green-100 rounded-full p-3 md:p-4 w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center">
                   <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-green-600" />
                 </div>
                 <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">
-                  Ampuh Angkat Lemak
+                  Daya Bersih Maksimal dari Bahan Alami
                 </h3>
-                <p className="text-sm md:text-base text-gray-600">
-                  Ekstrak kulit jeruk pamelo secara alami melarutkan lemak dan
-                  minyak membandel dengan mudah.
+                <p className="text-sm md:text-base text-gray-600 flex-grow">
+                  Ekstrak kulit jeruk pamelo dengan kandungan asam sitrat dan
+                  d-limonene yang ampuh melarutkan lemak membandel tanpa bahan
+                  kimia keras.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-6 md:p-8 text-center">
+            {/* Keunggulan 2 */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 lg:col-span-1">
+              <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
                 <div className="bg-yellow-100 rounded-full p-3 md:p-4 w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center">
                   <Leaf className="w-6 h-6 md:w-8 md:h-8 text-yellow-600" />
                 </div>
                 <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">
-                  Hilangkan Bau Amis
+                  Efektif Hilangkan Bau Amis
                 </h3>
-                <p className="text-sm md:text-base text-gray-600">
-                  Formula dengan ekstrak daun kemangi efektif menetralisir bau
-                  tak sedap dari peralatan masak Anda.
+                <p className="text-sm md:text-base text-gray-600 flex-grow">
+                  Minyak esensial jeruk pamelo dengan antimikroba efektif
+                  menghilangkan bau amis yang membandel pada peralatan masak.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-6 md:p-8 text-center">
+            {/* Keunggulan 3 */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 lg:col-span-1">
+              <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
                 <div className="bg-pink-100 rounded-full p-3 md:p-4 w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center">
                   <Heart className="w-6 h-6 md:w-8 md:h-8 text-pink-600" />
                 </div>
                 <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">
-                  Lembut & Aman di Kulit
+                  Aman untuk Keluarga, Lembut di Tangan
                 </h3>
-                <p className="text-sm md:text-base text-gray-600">
-                  Diformulasikan tanpa SLS/SLES, teruji aman bahkan untuk kulit
-                  paling sensitif sekalipun.
+                <p className="text-sm md:text-base text-gray-600 flex-grow">
+                  Bahan alami yang lembut, aman untuk seluruh keluarga.
+                  Kandungan pektin alami menjaga kelembapan kulit tangan Anda.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Keunggulan 4 */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-1 lg:col-span-1">
+              <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
+                <div className="bg-blue-100 rounded-full p-3 md:p-4 w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center">
+                  <Leaf className="w-6 h-6 md:w-8 md:h-8 text-blue-600" />
+                </div>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">
+                  Ramah Lingkungan & Berkelanjutan
+                </h3>
+                <p className="text-sm md:text-base text-gray-600 flex-grow">
+                  Kemasan eco-friendly dan refillable untuk mengurangi limbah
+                  plastik. Turut serta dalam gerakan pelestarian lingkungan.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Keunggulan 5 */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-1 lg:col-span-2">
+              <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
+                <div className="bg-orange-100 rounded-full p-3 md:p-4 w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center">
+                  <Heart className="w-6 h-6 md:w-8 md:h-8 text-orange-600" />
+                </div>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">
+                  Mendukung Kesejahteraan Petani Lokal
+                </h3>
+                <p className="text-sm md:text-base text-gray-600 flex-grow">
+                  Setiap pembelian PAMELIA mendukung perekonomian petani jeruk
+                  pamelo di Kudus. Bukan hanya piring bersih, tetapi juga dampak
+                  positif bagi komunitas lokal.
                 </p>
               </CardContent>
             </Card>
