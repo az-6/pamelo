@@ -14,8 +14,45 @@ import {
   Instagram,
 } from "lucide-react";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function Component() {
+  // State untuk slider foto kegiatan
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const activityPhotos = [
+    {
+      src: "/s1.jpg",
+      caption: "Proses pembelian dan seleksi kulit jeruk pamelo berkualitas",
+    },
+    {
+      src: "/s2.jpg",
+      caption: "Pemilihan bahan alami terbaik untuk formula PAMELIA",
+    },
+    { src: "/s3.jpg", caption: "Proses sortir dan persiapan bahan baku alami" },
+    {
+      src: "/s4.jpg",
+      caption: "Quality control pemilihan bahan daun kemangi segar",
+    },
+    { src: "/s5.jpg", caption: "Proses pembuatan sabun cuci piring PAMELIA" },
+  ];
+
+  // Auto-slide effect
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prevSlide) =>
+        prevSlide === activityPhotos.length - 1 ? 0 : prevSlide + 1
+      );
+    }, 4000); // Ganti slide setiap 4 detik
+
+    return () => clearInterval(timer);
+  }, [activityPhotos.length, currentSlide]); // Reset timer ketika currentSlide berubah
+
+  // Function untuk handle manual navigation dan reset timer
+  const handleSlideChange = (newSlide: number) => {
+    setCurrentSlide(newSlide);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Integrated Logos */}
@@ -704,6 +741,141 @@ export default function Component() {
               <span className="font-bold text-green-600 text-sm md:text-base">
                 Program P2MW - Inovasi untuk Indonesia
               </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Activity Photos Section */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Perjalanan Kami Mengembangkan PAMELIA
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 px-4">
+              Dokumentasi kegiatan riset dan pengembangan produk inovatif kami
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            {/* Slider Container */}
+            <div className="relative overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl bg-gray-100">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {activityPhotos.map((photo, index) => (
+                  <div key={index} className="w-full flex-shrink-0 relative">
+                    <div className="aspect-[3/4] md:aspect-[4/5] lg:aspect-[5/6] relative">
+                      <Image
+                        src={photo.src}
+                        alt={photo.caption}
+                        fill
+                        className="object-cover"
+                        priority={index === 0}
+                      />
+                      {/* Overlay gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+                      {/* Caption */}
+                      <div className="absolute bottom-4 md:bottom-6 left-4 md:left-6 right-4 md:right-6">
+                        <p className="text-white text-sm md:text-lg font-medium leading-relaxed">
+                          {photo.caption}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Navigation Dots */}
+              <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2">
+                <div className="flex space-x-2">
+                  {activityPhotos.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleSlideChange(index)}
+                      className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
+                        currentSlide === index
+                          ? "bg-white scale-125"
+                          : "bg-white/50 hover:bg-white/75"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={() =>
+                  handleSlideChange(
+                    currentSlide === 0
+                      ? activityPhotos.length - 1
+                      : currentSlide - 1
+                  )
+                }
+                className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 md:p-3 transition-all duration-300 group"
+              >
+                <svg
+                  className="w-4 h-4 md:w-6 md:h-6 text-white group-hover:scale-110 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+
+              <button
+                onClick={() =>
+                  handleSlideChange(
+                    currentSlide === activityPhotos.length - 1
+                      ? 0
+                      : currentSlide + 1
+                  )
+                }
+                className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 md:p-3 transition-all duration-300 group"
+              >
+                <svg
+                  className="w-4 h-4 md:w-6 md:h-6 text-white group-hover:scale-110 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            {/* Progress Bar */}
+            <div className="mt-6 md:mt-8">
+              <div className="w-full bg-gray-200 rounded-full h-1 md:h-2">
+                <div
+                  className="bg-gradient-to-r from-green-500 to-green-600 h-1 md:h-2 rounded-full transition-all duration-300"
+                  style={{
+                    width: `${
+                      ((currentSlide + 1) / activityPhotos.length) * 100
+                    }%`,
+                  }}
+                />
+              </div>
+              <div className="flex justify-between mt-2 text-xs md:text-sm text-gray-500">
+                <span>
+                  Foto {currentSlide + 1} dari {activityPhotos.length}
+                </span>
+                <span>Scroll otomatis aktif</span>
+              </div>
             </div>
           </div>
         </div>
