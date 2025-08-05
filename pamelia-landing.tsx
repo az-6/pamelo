@@ -167,7 +167,7 @@ export default function Component() {
             <div className="relative mt-8 lg:mt-0">
               <div className="bg-white rounded-2xl md:rounded-3xl shadow-2xl p-4 md:p-8">
                 <Image
-                  src="/placeholder.svg?height=400&width=400"
+                  src="original.jpg?height=400&width=400"
                   alt="PAMELIA Natural Dish Soap with Pomelo and Basil"
                   width={400}
                   height={400}
@@ -396,7 +396,7 @@ export default function Component() {
 
             <div className="relative order-1 md:order-2">
               <Image
-                src="/placeholder.svg?height=500&width=500"
+                src="keunggulan.png?height=500&width=500"
                 alt="Natural Ingredients"
                 width={500}
                 height={500}
@@ -424,7 +424,7 @@ export default function Component() {
               <CardContent className="p-6 md:p-8">
                 <div className="text-center mb-4 md:mb-6">
                   <Image
-                    src="/placeholder.svg?height=200&width=200"
+                    src="original2.jpg?height=200&width=200"
                     alt="PAMELIA Original"
                     width={150}
                     height={150}
