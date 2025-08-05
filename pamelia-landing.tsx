@@ -19,6 +19,8 @@ import { useState, useEffect } from "react";
 export default function Component() {
   // State untuk slider foto kegiatan
   const [currentSlide, setCurrentSlide] = useState(0);
+  // State untuk toggle varian lainnya
+  const [showOtherVariants, setShowOtherVariants] = useState(false);
 
   const activityPhotos = [
     {
@@ -135,20 +137,20 @@ export default function Component() {
               <Badge className="bg-green-100 text-green-800 hover:bg-green-100 mx-auto lg:mx-0 w-fit">
                 100% Bahan Alami
               </Badge>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
                 PAMELIA Dishwashing Soap,
                 <span className="text-green-600">
                   {" "}
                   Peluntur Lemak Membandel Ramah Lingkungan
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
                 Bebas Lemak & Bau Amis, Aman di Tangan
               </p>
-              <p className="text-base md:text-lg text-gray-500">
+              <p className="text-sm sm:text-base md:text-lg text-gray-500">
                 Sabun Cuci Piring Alami, Diformulasikan Tanpa SLS/SLES
               </p>
-              <p className="text-base md:text-lg text-gray-600 italic">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 italic">
                 Temukan Kekuatan Alami PAMELIA
               </p>
               <Button
@@ -250,17 +252,17 @@ export default function Component() {
           </div>
 
           {/* 5 Keunggulan */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-12 md:mt-16">
             {/* Keunggulan 1 */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 lg:col-span-1">
-              <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
-                <div className="bg-green-100 rounded-full p-3 md:p-4 w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center">
-                  <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-green-600" />
+              <CardContent className="p-4 sm:p-6 md:p-8 text-center h-full flex flex-col">
+                <div className="bg-green-100 rounded-full p-2 sm:p-3 md:p-4 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4 md:mb-6 flex items-center justify-center">
+                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-green-600" />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
                   Daya Bersih Maksimal dari Bahan Alami
                 </h3>
-                <p className="text-sm md:text-base text-gray-600 flex-grow">
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 flex-grow">
                   Ekstrak kulit jeruk pamelo dengan kandungan asam sitrat dan
                   d-limonene yang ampuh melarutkan lemak membandel tanpa bahan
                   kimia keras.
@@ -270,14 +272,14 @@ export default function Component() {
 
             {/* Keunggulan 2 */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 lg:col-span-1">
-              <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
-                <div className="bg-yellow-100 rounded-full p-3 md:p-4 w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center">
-                  <Leaf className="w-6 h-6 md:w-8 md:h-8 text-yellow-600" />
+              <CardContent className="p-4 sm:p-6 md:p-8 text-center h-full flex flex-col">
+                <div className="bg-yellow-100 rounded-full p-2 sm:p-3 md:p-4 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4 md:mb-6 flex items-center justify-center">
+                  <Leaf className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-yellow-600" />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
                   Efektif Hilangkan Bau Amis
                 </h3>
-                <p className="text-sm md:text-base text-gray-600 flex-grow">
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 flex-grow">
                   Minyak esensial jeruk pamelo dengan antimikroba efektif
                   menghilangkan bau amis yang membandel pada peralatan masak.
                 </p>
@@ -286,14 +288,14 @@ export default function Component() {
 
             {/* Keunggulan 3 */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 lg:col-span-1">
-              <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
-                <div className="bg-pink-100 rounded-full p-3 md:p-4 w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center">
-                  <Heart className="w-6 h-6 md:w-8 md:h-8 text-pink-600" />
+              <CardContent className="p-4 sm:p-6 md:p-8 text-center h-full flex flex-col">
+                <div className="bg-pink-100 rounded-full p-2 sm:p-3 md:p-4 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4 md:mb-6 flex items-center justify-center">
+                  <Heart className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-pink-600" />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
                   Aman untuk Keluarga, Lembut di Tangan
                 </h3>
-                <p className="text-sm md:text-base text-gray-600 flex-grow">
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 flex-grow">
                   Bahan alami yang lembut, aman untuk seluruh keluarga.
                   Kandungan pektin alami menjaga kelembapan kulit tangan Anda.
                 </p>
@@ -301,15 +303,15 @@ export default function Component() {
             </Card>
 
             {/* Keunggulan 4 */}
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-1 lg:col-span-1">
-              <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
-                <div className="bg-blue-100 rounded-full p-3 md:p-4 w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center">
-                  <Leaf className="w-6 h-6 md:w-8 md:h-8 text-blue-600" />
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 sm:col-span-1 lg:col-span-1">
+              <CardContent className="p-4 sm:p-6 md:p-8 text-center h-full flex flex-col">
+                <div className="bg-blue-100 rounded-full p-2 sm:p-3 md:p-4 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4 md:mb-6 flex items-center justify-center">
+                  <Leaf className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-blue-600" />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
                   Ramah Lingkungan & Berkelanjutan
                 </h3>
-                <p className="text-sm md:text-base text-gray-600 flex-grow">
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 flex-grow">
                   Kemasan eco-friendly dan refillable untuk mengurangi limbah
                   plastik. Turut serta dalam gerakan pelestarian lingkungan.
                 </p>
@@ -317,15 +319,15 @@ export default function Component() {
             </Card>
 
             {/* Keunggulan 5 */}
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-1 lg:col-span-2">
-              <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
-                <div className="bg-orange-100 rounded-full p-3 md:p-4 w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center">
-                  <Heart className="w-6 h-6 md:w-8 md:h-8 text-orange-600" />
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 sm:col-span-2 lg:col-span-2">
+              <CardContent className="p-4 sm:p-6 md:p-8 text-center h-full flex flex-col">
+                <div className="bg-orange-100 rounded-full p-2 sm:p-3 md:p-4 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4 md:mb-6 flex items-center justify-center">
+                  <Heart className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-orange-600" />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
                   Mendukung Kesejahteraan Petani Lokal
                 </h3>
-                <p className="text-sm md:text-base text-gray-600 flex-grow">
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 flex-grow">
                   Setiap pembelian PAMELIA mendukung perekonomian petani jeruk
                   pamelo di Kudus. Bukan hanya piring bersih, tetapi juga dampak
                   positif bagi komunitas lokal.
@@ -412,98 +414,158 @@ export default function Component() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Varian Produk Kami
+              PAMELIA Original 1L
             </h2>
             <p className="text-base md:text-lg text-gray-600 px-4">
-              Pilih varian yang sesuai dengan kebutuhan dapur Anda
+              Pilihan Terbaik Keluarga Indonesia
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-            <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-y-2">
-              <CardContent className="p-6 md:p-8">
-                <div className="text-center mb-4 md:mb-6">
+          {/* Best Seller Focus */}
+          <div className="max-w-2xl mx-auto mb-8 md:mb-12">
+            <Card className="border-3 border-yellow-400 shadow-2xl relative bg-white">
+              <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
+                <Badge className="bg-yellow-500 text-white font-bold px-3 sm:px-4 md:px-6 py-1 sm:py-2 text-xs sm:text-sm md:text-base lg:text-lg shadow-lg">
+                  BEST SELLER
+                </Badge>
+              </div>
+              <CardContent className="p-8 md:p-12 text-center">
+                <div className="mb-4 sm:mb-6 md:mb-8">
                   <Image
-                    src="original2.jpg?height=200&width=200"
-                    alt="PAMELIA Original"
-                    width={150}
-                    height={150}
-                    className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-3 md:mb-4"
+                    src="original2.jpg?height=250&width=250"
+                    alt="PAMELIA Original 1 Liter"
+                    width={200}
+                    height={200}
+                    className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 mx-auto mb-3 md:mb-4"
                   />
-                  <Badge className="bg-yellow-100 text-yellow-800">
-                    Original
+                  <Badge className="bg-yellow-100 text-yellow-800 text-sm sm:text-base lg:text-lg px-3 sm:px-4 py-1 sm:py-2">
+                    1 Liter
                   </Badge>
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 text-center">
-                  PAMELIA Original
-                </h3>
-                <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6 text-center px-2">
-                  Untuk kekuatan pembersih maksimal dari ekstrak pamelo dengan
-                  aroma sitrus yang menyegarkan.
-                </p>
-                <div className="text-center mb-4 md:mb-6">
-                  <span className="text-2xl md:text-3xl font-bold text-green-600">
-                    Rp 25.000
-                  </span>
-                </div>
-                <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-white text-sm md:text-base py-2 md:py-3">
-                  Pilih Varian Ini
-                </Button>
-              </CardContent>
-            </Card>
 
-            <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-y-2">
-              <CardContent className="p-6 md:p-8">
-                <div className="text-center mb-4 md:mb-6">
-                  <Image
-                    src="/placeholder.svg?height=200&width=200"
-                    alt="PAMELIA Ekstrak Kemangi"
-                    width={150}
-                    height={150}
-                    className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-3 md:mb-4"
-                  />
-                  <Badge className="bg-green-100 text-green-800">
-                    Ekstrak Kemangi
-                  </Badge>
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 text-center">
-                  PAMELIA Ekstrak Kemangi
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
+                  PAMELIA Original 1L
                 </h3>
-                <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6 text-center px-2">
-                  Dengan tambahan ekstrak daun kemangi untuk perlindungan ekstra
-                  terhadap bau amis yang membandel.
+
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed px-2 sm:px-0">
+                  Ukuran paling populer! Ideal untuk kebutuhan keluarga
+                  sehari-hari dengan nilai ekonomis terbaik. Dipercaya ribuan
+                  keluarga Indonesia.
                 </p>
-                <div className="text-center mb-4 md:mb-6">
-                  <span className="text-2xl md:text-3xl font-bold text-green-600">
-                    Rp 28.000
-                  </span>
+
+                <div className="mb-4 sm:mb-6">
+                  <div className="flex items-center justify-center space-x-2 sm:space-x-3 mb-2">
+                    <span className="text-lg sm:text-xl md:text-2xl text-gray-500 line-through">
+                      Rp 35.000
+                    </span>
+                    <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600">
+                      Rp 25.000
+                    </span>
+                  </div>
+                  <p className="text-base sm:text-lg text-green-600 font-semibold">
+                    Hemat Rp 10.000!
+                  </p>
                 </div>
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white text-sm md:text-base py-2 md:py-3">
-                  Pilih Varian Ini
+
+                <Button
+                  size="lg"
+                  className="bg-yellow-500 hover:bg-yellow-600 text-white text-base sm:text-lg md:text-xl font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                >
+                  PESAN SEKARANG
                 </Button>
+
+                <div className="mt-4 sm:mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-xs sm:text-sm">
+                  <div className="flex items-center justify-center space-x-2 text-green-600">
+                    <span>✓</span>
+                    <span>Bahan 100% Alami</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2 text-green-600">
+                    <span>✓</span>
+                    <span>Ramah Lingkungan</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2 text-green-600">
+                    <span>✓</span>
+                    <span>Aman di Tangan</span>
+                  </div>
+                </div>
+
+                {/* Catatan ukuran lain */}
+                <div className="mt-4 p-3 bg-yellow-50 rounded-lg border border-yellow-200">
+                  <p className="text-sm text-gray-600 text-center">
+                    <span className="font-medium">Tersedia juga:</span> Ukuran
+                    500ml dan 2L untuk kebutuhan yang berbeda
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>
 
-          <div className="text-center mt-6 md:mt-8">
-            <Card className="inline-block border-2 border-green-200 bg-green-50 mx-4">
-              <CardContent className="p-4 md:p-6">
-                <h4 className="text-lg md:text-xl font-bold text-green-800 mb-2">
-                  Paket Hemat
-                </h4>
-                <p className="text-sm md:text-base text-green-700 mb-3 md:mb-4">
-                  Beli kedua varian dan hemat Rp 8.000!
-                </p>
-                <div className="flex items-center justify-center space-x-2">
-                  <span className="text-base md:text-lg text-gray-500 line-through">
-                    Rp 53.000
-                  </span>
-                  <span className="text-xl md:text-2xl font-bold text-green-600">
-                    Rp 45.000
-                  </span>
-                </div>
-              </CardContent>
-            </Card>
+          {/* Toggle Button untuk Varian Lainnya */}
+          <div className="text-center mb-4 sm:mb-6">
+            <Button
+              variant="outline"
+              onClick={() => setShowOtherVariants(!showOtherVariants)}
+              className="border-2 border-green-500 text-green-600 hover:bg-green-50 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base"
+            >
+              {showOtherVariants
+                ? "▲ Sembunyikan Varian Lainnya"
+                : "▼ Lihat Varian Lainnya"}
+            </Button>
+          </div>
+
+          {/* Slide Down Varian Lainnya */}
+          <div
+            className={`transition-all duration-500 ease-in-out overflow-hidden ${
+              showOtherVariants
+                ? "max-h-[1000px] opacity-100"
+                : "max-h-0 opacity-0"
+            }`}
+          >
+            <div className="max-w-2xl mx-auto mb-6 sm:mb-8">
+              {/* Varian Ekstrak Kemangi */}
+              <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <div className="text-center mb-4 md:mb-6">
+                    <Image
+                      src="kemangi.jpg?height=150&width=150"
+                      alt="PAMELIA dengan Ekstrak Kemangi 1L"
+                      width={120}
+                      height={120}
+                      className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 mx-auto mb-3 md:mb-4 rounded-full"
+                    />
+                    <Badge className="bg-green-100 text-green-800 text-sm sm:text-base">
+                      1 Liter
+                    </Badge>
+                  </div>
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4 text-center">
+                    PAMELIA dengan Ekstrak Kemangi 1L
+                  </h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-4 md:mb-6 text-center px-2">
+                    Varian dengan tambahan ekstrak daun kemangi untuk aroma yang
+                    lebih segar dan khasiat antibakteri yang lebih kuat.
+                    Sempurna untuk membersihkan peralatan makan.
+                  </p>
+                  <div className="text-center mb-4 md:mb-6">
+                    <span className="text-lg sm:text-xl md:text-2xl font-bold text-green-600">
+                      Rp 27.000
+                    </span>
+                  </div>
+                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white text-xs sm:text-sm md:text-base py-2 md:py-3">
+                    Pilih Varian Kemangi
+                  </Button>
+
+                  {/* Catatan ukuran lain untuk varian kemangi */}
+                  <div className="mt-3 sm:mt-4 p-2 sm:p-3 bg-green-50 rounded-lg border border-green-200">
+                    <p className="text-xs sm:text-sm text-gray-600 text-center">
+                      <span className="font-medium">
+                        Varian Kemangi tersedia juga:
+                      </span>{" "}
+                      Ukuran 500ml dan 2L
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -628,11 +690,11 @@ export default function Component() {
           </div>
 
           {/* Team Members Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto">
             {/* Team Member 1 */}
-            <div className="bg-white rounded-xl md:rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
-              <div className="relative mb-4">
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto overflow-hidden shadow-lg">
+            <div className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="relative mb-3 sm:mb-4">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full mx-auto overflow-hidden shadow-lg">
                   <Image
                     src="/pfp3.jpg?height=100&width=100"
                     alt="Anggota Tim 1"
@@ -642,13 +704,13 @@ export default function Component() {
                   />
                 </div>
                 <div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 bg-blue-500 rounded-full p-1 md:p-2 shadow-lg">
-                  <Heart className="w-3 h-3 md:w-4 md:h-4 text-white" />
+                  <Heart className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 text-white" />
                 </div>
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+              <h3 className="text-sm sm:text-lg md:text-xl font-bold text-gray-900 mb-1 sm:mb-2">
                 Triana Rizqi Amelia
               </h3>
-              <p className="text-sm md:text-base text-blue-600 font-medium mb-2">
+              <p className="text-xs sm:text-sm md:text-base text-blue-600 font-medium mb-1 sm:mb-2">
                 Chief Executive Officer
               </p>
               <p className="text-xs md:text-sm text-gray-600">
@@ -657,9 +719,9 @@ export default function Component() {
             </div>
 
             {/* Team Member 2 */}
-            <div className="bg-white rounded-xl md:rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
-              <div className="relative mb-4">
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto overflow-hidden shadow-lg">
+            <div className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="relative mb-3 sm:mb-4">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full mx-auto overflow-hidden shadow-lg">
                   <Image
                     src="/pfp4.jpg?height=100&width=100"
                     alt="Anggota Tim 2"
@@ -669,22 +731,22 @@ export default function Component() {
                   />
                 </div>
                 <div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 bg-green-500 rounded-full p-1 md:p-2 shadow-lg">
-                  <Sparkles className="w-3 h-3 md:w-4 md:h-4 text-white" />
+                  <Sparkles className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 text-white" />
                 </div>
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+              <h3 className="text-sm sm:text-lg md:text-xl font-bold text-gray-900 mb-1 sm:mb-2">
                 Ira Khoirunnisa
               </h3>
-              <p className="text-sm md:text-base text-green-600 font-medium mb-2">
+              <p className="text-xs sm:text-sm md:text-base text-green-600 font-medium mb-1 sm:mb-2">
                 Chief Financial Officer
               </p>
               <p className="text-xs md:text-sm text-gray-600">Manajemen</p>
             </div>
 
             {/* Team Member 3 */}
-            <div className="bg-white rounded-xl md:rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
-              <div className="relative mb-4">
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto overflow-hidden shadow-lg">
+            <div className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="relative mb-3 sm:mb-4">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full mx-auto overflow-hidden shadow-lg">
                   <Image
                     src="/pfp5.jpg?height=100&width=100"
                     alt="Anggota Tim 3"
@@ -694,13 +756,13 @@ export default function Component() {
                   />
                 </div>
                 <div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 bg-yellow-500 rounded-full p-1 md:p-2 shadow-lg">
-                  <Leaf className="w-3 h-3 md:w-4 md:h-4 text-white" />
+                  <Leaf className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 text-white" />
                 </div>
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+              <h3 className="text-sm sm:text-lg md:text-xl font-bold text-gray-900 mb-1 sm:mb-2">
                 Bagus Stiawan Rahmadhon
               </h3>
-              <p className="text-sm md:text-base text-yellow-600 font-medium mb-2">
+              <p className="text-xs sm:text-sm md:text-base text-yellow-600 font-medium mb-1 sm:mb-2">
                 Chief Operating Officer
               </p>
               <p className="text-xs md:text-sm text-gray-600">
@@ -709,9 +771,9 @@ export default function Component() {
             </div>
 
             {/* Team Member 4 */}
-            <div className="bg-white rounded-xl md:rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
-              <div className="relative mb-4">
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto overflow-hidden shadow-lg">
+            <div className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="relative mb-3 sm:mb-4">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full mx-auto overflow-hidden shadow-lg">
                   <Image
                     src="/pfp2.jpg?height=100&width=100"
                     alt="Anggota Tim 4"
@@ -721,13 +783,13 @@ export default function Component() {
                   />
                 </div>
                 <div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 bg-pink-500 rounded-full p-1 md:p-2 shadow-lg">
-                  <Star className="w-3 h-3 md:w-4 md:h-4 text-white" />
+                  <Star className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 text-white" />
                 </div>
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+              <h3 className="text-sm sm:text-lg md:text-xl font-bold text-gray-900 mb-1 sm:mb-2">
                 Atina Risqiyana
               </h3>
-              <p className="text-sm md:text-base text-pink-600 font-medium mb-2">
+              <p className="text-xs sm:text-sm md:text-base text-pink-600 font-medium mb-1 sm:mb-2">
                 Chief Marketing Officer
               </p>
               <p className="text-xs md:text-sm text-gray-600">Manajemen</p>
@@ -884,70 +946,70 @@ export default function Component() {
       {/* Final CTA */}
       <section className="py-12 md:py-16 bg-gradient-to-r from-green-600 to-green-700">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 px-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 px-2 sm:px-4">
             Siap Beralih ke Dapur yang Lebih Sehat & Bersih?
           </h2>
-          <p className="text-base md:text-xl text-green-100 mb-6 md:mb-8 max-w-2xl mx-auto px-4">
+          <p className="text-sm sm:text-base md:text-xl text-green-100 mb-6 md:mb-8 max-w-2xl mx-auto px-2 sm:px-4">
             Bergabunglah dengan ribuan keluarga yang telah merasakan manfaat
             PAMELIA untuk dapur yang lebih sehat
           </p>
 
           <Button
             size="lg"
-            className="bg-white text-green-600 hover:bg-gray-100 px-6 md:px-12 py-4 text-lg md:text-xl font-bold rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 mb-6 md:mb-8 w-full sm:w-auto"
+            className="bg-white text-green-600 hover:bg-gray-100 px-4 sm:px-6 md:px-12 py-3 sm:py-4 text-sm sm:text-lg md:text-xl font-bold rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 mb-6 md:mb-8 w-full sm:w-auto"
           >
-            <MessageCircle className="w-6 h-6 mr-2 md:mr-3" />
+            <MessageCircle className="w-4 h-4 sm:w-6 sm:h-6 mr-1 sm:mr-2 md:mr-3" />
             <span className="hidden sm:inline">
               DAPATKAN PAMELIA VIA WHATSAPP SEKARANG
             </span>
-            <span className="sm:hidden">PESAN VIA WHATSAPP</span>
+            <span className="sm:hidden text-xs">PESAN VIA WHATSAPP</span>
           </Button>
 
-          <div className="space-y-4 md:space-y-6 mt-6 md:mt-8">
-            <p className="text-green-100 text-base md:text-lg">
+          <div className="space-y-3 sm:space-y-4 md:space-y-6 mt-4 sm:mt-6 md:mt-8">
+            <p className="text-green-100 text-sm sm:text-base md:text-lg">
               Ikuti dan Temukan Kami di:
             </p>
 
             {/* Social Media */}
-            <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
-              <p className="text-green-100 font-medium text-sm md:text-base">
+            <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4">
+              <p className="text-green-100 font-medium text-xs sm:text-sm md:text-base">
                 Sosial Media:
               </p>
-              <div className="flex space-x-3">
+              <div className="flex space-x-2 sm:space-x-3">
                 <div className="bg-white rounded-lg p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
-                  <MessageCircle className="w-5 h-5 md:w-6 md:h-6 text-green-600" />
+                  <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-green-600" />
                 </div>
                 <div className="bg-white rounded-lg p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
-                  <Instagram className="w-5 h-5 md:w-6 md:h-6 text-pink-600" />
+                  <Instagram className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-pink-600" />
                 </div>
                 <div className="bg-white rounded-lg p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
-                  <AtSign className="w-5 h-5 md:w-6 md:h-6 text-black" />
+                  <AtSign className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-black" />
                 </div>
               </div>
             </div>
 
             {/* E-commerce */}
-            <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
-              <p className="text-green-100 font-medium text-sm md:text-base">
+            <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4">
+              <p className="text-green-100 font-medium text-xs sm:text-sm md:text-base">
                 E-commerce:
               </p>
-              <div className="flex space-x-3">
-                <div className="bg-white rounded-lg p-3 md:p-4 shadow-lg hover:shadow-xl transition-shadow cursor-pointer flex items-center justify-center min-w-[100px] md:min-w-[120px]">
+              <div className="flex space-x-2 sm:space-x-3">
+                <div className="bg-white rounded-lg p-2 sm:p-3 md:p-4 shadow-lg hover:shadow-xl transition-shadow cursor-pointer flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px]">
                   <Image
                     src="tokped.png"
                     alt="Tokopedia"
                     width={100}
                     height={30}
-                    className="w-auto h-6 md:h-7 max-w-[90px] md:max-w-[110px] object-contain"
+                    className="w-auto h-4 sm:h-6 md:h-7 max-w-[70px] sm:max-w-[90px] md:max-w-[110px] object-contain"
                   />
                 </div>
-                <div className="bg-white rounded-lg p-3 md:p-4 shadow-lg hover:shadow-xl transition-shadow cursor-pointer flex items-center justify-center min-w-[100px] md:min-w-[120px]">
+                <div className="bg-white rounded-lg p-2 sm:p-3 md:p-4 shadow-lg hover:shadow-xl transition-shadow cursor-pointer flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px]">
                   <Image
                     src="shoope.png"
                     alt="Shopee"
                     width={100}
                     height={30}
-                    className="w-auto h-6 md:h-7 max-w-[90px] md:max-w-[110px] object-contain"
+                    className="w-auto h-4 sm:h-6 md:h-7 max-w-[70px] sm:max-w-[90px] md:max-w-[110px] object-contain"
                   />
                 </div>
               </div>
