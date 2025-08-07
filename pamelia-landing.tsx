@@ -456,14 +456,14 @@ export default function Component() {
                 <div className="mb-4 sm:mb-6">
                   <div className="flex items-center justify-center space-x-2 sm:space-x-3 mb-2">
                     <span className="text-lg sm:text-xl md:text-2xl text-gray-500 line-through">
-                      Rp 35.000
+                      Rp 17.000
                     </span>
                     <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600">
-                      Rp 25.000
+                      Rp 10.000
                     </span>
                   </div>
                   <p className="text-base sm:text-lg text-green-600 font-semibold">
-                    Hemat Rp 10.000!
+                    Hemat Rp 7.000!
                   </p>
                 </div>
 
@@ -493,7 +493,7 @@ export default function Component() {
                 <div className="mt-4 p-3 bg-yellow-50 rounded-lg border border-yellow-200">
                   <p className="text-sm text-gray-600 text-center">
                     <span className="font-medium">Tersedia juga:</span> Ukuran
-                    500ml dan 2L untuk kebutuhan yang berbeda
+                    500ml dan 2L
                   </p>
                 </div>
               </CardContent>
@@ -547,7 +547,7 @@ export default function Component() {
                   </p>
                   <div className="text-center mb-4 md:mb-6">
                     <span className="text-lg sm:text-xl md:text-2xl font-bold text-green-600">
-                      Rp 27.000
+                      Rp 12.000
                     </span>
                   </div>
                   <Button className="w-full bg-green-600 hover:bg-green-700 text-white text-xs sm:text-sm md:text-base py-2 md:py-3">
