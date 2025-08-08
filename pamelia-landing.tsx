@@ -57,17 +57,84 @@ export default function Component() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section - Promotional Header */}
-      <section className="relative">
-        <div className="w-full">
-          <Image
-            src="/header.png"
-            alt="PAMELIA Promotional Header"
-            width={1920}
-            height={800}
-            className="w-full h-auto object-cover"
-            priority
-          />
+      {/* Hero Section with Header Image */}
+      <section className="relative bg-gradient-to-br from-green-50 to-yellow-50 py-8 md:py-12 lg:py-16">
+        <div className="container mx-auto px-4">
+          {/* Header Promotion Image */}
+          <div className="mb-6 md:mb-8 lg:mb-10">
+            <div className="max-w-6xl mx-auto">
+              <Image
+                src="/header.png"
+                alt="PAMELIA Promotion Header"
+                width={1200}
+                height={400}
+                className="w-full h-auto rounded-xl md:rounded-2xl shadow-lg object-cover"
+                priority
+              />
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-8 items-center">
+            <div className="space-y-4 md:space-y-6 text-center lg:text-left">
+              {/* Product Logo */}
+              <div className="flex justify-center lg:justify-start">
+                <div className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full bg-white shadow-lg flex items-center justify-center mb-2">
+                  <Image
+                    src="/logo.png?height=100&width=100"
+                    alt="PAMELIA Product Logo"
+                    width={100}
+                    height={100}
+                    className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full object-contain"
+                  />
+                </div>
+              </div>
+              <Badge className="bg-green-100 text-green-800 hover:bg-green-100 mx-auto lg:mx-0 w-fit">
+                100% Bahan Alami
+              </Badge>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
+                PAMELIA Dishwashing Soap,
+                <span className="text-green-600">
+                  {" "}
+                  Peluntur Lemak Membandel Ramah Lingkungan
+                </span>
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+                Bebas Lemak & Bau Amis, Aman di Tangan
+              </p>
+              <p className="text-sm sm:text-base md:text-lg text-gray-500">
+                Sabun Cuci Piring Alami, Diformulasikan Tanpa SLS/SLES
+              </p>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 italic">
+                Temukan Kekuatan Alami PAMELIA
+              </p>
+              <Button
+                size="lg"
+                className="bg-green-600 hover:bg-green-700 text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                onClick={() => {
+                  document.getElementById("keunggulan")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
+              >
+                Pelajari Keunggulannya
+              </Button>
+            </div>
+            <div className="relative mt-8 lg:mt-0">
+              <div className="bg-white rounded-2xl md:rounded-3xl shadow-2xl p-4 md:p-8">
+                <Image
+                  src="original.jpg?height=400&width=400"
+                  alt="PAMELIA Natural Dish Soap with Pomelo and Basil"
+                  width={400}
+                  height={400}
+                  className="w-full h-auto rounded-xl md:rounded-2xl"
+                />
+              </div>
+              <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 bg-yellow-400 rounded-full p-2 md:p-4 shadow-lg">
+                <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-white" />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
