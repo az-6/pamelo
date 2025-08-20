@@ -447,7 +447,7 @@ export default function Component() {
                 <div className="mt-4 p-3 bg-yellow-50 rounded-lg border border-yellow-200">
                   <p className="text-sm text-gray-600 text-center">
                     <span className="font-medium">Tersedia juga:</span> Ukuran
-                    500ml (Rp 8000) dan 2L (Rp 30.000)
+                    500ml (Rp 8.000) dan 2L (Rp 30.000)
                   </p>
                 </div>
               </CardContent>
@@ -514,7 +514,7 @@ export default function Component() {
                       <span className="font-medium">
                         Varian Kemangi tersedia juga:
                       </span>{" "}
-                      Ukuran 500ml (Rp 8000) dan 2L (Rp 30.000)
+                      Ukuran 500ml (Rp 8.000) dan 2L (Rp 30.000)
                     </p>
                   </div>
                 </CardContent>
