@@ -24,6 +24,14 @@ export default function Component() {
 
   const activityPhotos = [
     {
+      src: "/s6.jpg",
+      caption: "Expo dan Sosialisasi",
+    },
+    {
+      src: "/s7.jpg",
+      caption: "Expo dan Sosialisasi",
+    },
+    {
       src: "/s1.jpg",
       caption: "Proses pembelian dan seleksi kulit jeruk pamelo berkualitas",
     },
@@ -45,12 +53,11 @@ export default function Component() {
       setCurrentSlide((prevSlide) =>
         prevSlide === activityPhotos.length - 1 ? 0 : prevSlide + 1
       );
-    }, 4000); // Ganti slide setiap 4 detik
+    }, 4000);
 
     return () => clearInterval(timer);
-  }, [activityPhotos.length, currentSlide]); // Reset timer ketika currentSlide berubah
+  }, [activityPhotos.length, currentSlide]);
 
-  // Function untuk handle manual navigation dan reset timer
   const handleSlideChange = (newSlide: number) => {
     setCurrentSlide(newSlide);
   };
