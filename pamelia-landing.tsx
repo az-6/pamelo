@@ -10,7 +10,6 @@ import {
   Star,
   MessageCircle,
   Phone,
-  AtSign,
   Instagram,
 } from "lucide-react";
 import Image from "next/image";
@@ -918,6 +917,7 @@ export default function Component() {
           <Button
             size="lg"
             className="bg-white text-green-600 hover:bg-gray-100 px-4 sm:px-6 md:px-12 py-3 sm:py-4 text-sm sm:text-lg md:text-xl font-bold rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 mb-6 md:mb-8 w-full sm:w-auto"
+            onClick={() => window.open("https://wa.me/6281226078156", "_blank")}
           >
             <MessageCircle className="w-4 h-4 sm:w-6 sm:h-6 mr-1 sm:mr-2 md:mr-3" />
             <span className="hidden sm:inline">
@@ -937,14 +937,75 @@ export default function Component() {
                 Sosial Media:
               </p>
               <div className="flex space-x-2 sm:space-x-3">
-                <div className="bg-white rounded-lg p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+                <div
+                  className="bg-white rounded-lg p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                  onClick={() =>
+                    window.open("https://wa.me/6281226078156", "_blank")
+                  }
+                >
                   <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-green-600" />
                 </div>
-                <div className="bg-white rounded-lg p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+                <div
+                  className="bg-white rounded-lg p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                  onClick={() =>
+                    window.open(
+                      "https://www.instagram.com/PAMELIA.dishsoap",
+                      "_blank"
+                    )
+                  }
+                >
                   <Instagram className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-pink-600" />
                 </div>
-                <div className="bg-white rounded-lg p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
-                  <AtSign className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-black" />
+                <div
+                  className="bg-white rounded-lg p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                  onClick={() =>
+                    window.open(
+                      "https://www.tiktok.com/@pamelia.dishsoap",
+                      "_blank"
+                    )
+                  }
+                >
+                  <svg
+                    className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-black"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-.88-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z" />
+                  </svg>
+                </div>
+                <div
+                  className="bg-white rounded-lg p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                  onClick={() =>
+                    window.open(
+                      "https://www.facebook.com/share/199CZfm7Rx/",
+                      "_blank"
+                    )
+                  }
+                >
+                  <svg
+                    className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-blue-600"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                  </svg>
+                </div>
+                <div
+                  className="bg-white rounded-lg p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                  onClick={() =>
+                    window.open(
+                      "https://www.youtube.com/@pamelia.dishsoap",
+                      "_blank"
+                    )
+                  }
+                >
+                  <svg
+                    className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-red-600"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                  </svg>
                 </div>
               </div>
             </div>
@@ -954,23 +1015,19 @@ export default function Component() {
               <p className="text-green-100 font-medium text-xs sm:text-sm md:text-base">
                 E-commerce:
               </p>
-              <div className="flex space-x-2 sm:space-x-3">
-                <div className="bg-white rounded-lg p-2 sm:p-3 md:p-4 shadow-lg hover:shadow-xl transition-shadow cursor-pointer flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px]">
-                  <Image
-                    src="tokped.png"
-                    alt="Tokopedia"
-                    width={100}
-                    height={30}
-                    className="w-auto h-4 sm:h-6 md:h-7 max-w-[70px] sm:max-w-[90px] md:max-w-[110px] object-contain"
-                  />
-                </div>
-                <div className="bg-white rounded-lg p-2 sm:p-3 md:p-4 shadow-lg hover:shadow-xl transition-shadow cursor-pointer flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px]">
+              <div className="flex justify-center">
+                <div
+                  className="bg-white rounded-lg p-2 sm:p-3 md:p-4 shadow-lg hover:shadow-xl transition-shadow cursor-pointer flex items-center justify-center min-w-[120px] sm:min-w-[140px] md:min-w-[160px]"
+                  onClick={() =>
+                    window.open("https://id.shp.ee/e56pShh", "_blank")
+                  }
+                >
                   <Image
                     src="shoope.png"
                     alt="Shopee"
-                    width={100}
-                    height={30}
-                    className="w-auto h-4 sm:h-6 md:h-7 max-w-[70px] sm:max-w-[90px] md:max-w-[110px] object-contain"
+                    width={120}
+                    height={35}
+                    className="w-auto h-5 sm:h-7 md:h-8 max-w-[100px] sm:max-w-[120px] md:max-w-[140px] object-contain"
                   />
                 </div>
               </div>
@@ -991,7 +1048,7 @@ export default function Component() {
             </p>
           </div>
           <p className="text-gray-400 text-xs md:text-sm px-4">
-            © 2024 PAMELIA. Semua hak dilindungi. Produk alami untuk keluarga
+            © 2025 PAMELIA. Semua hak dilindungi. Produk alami untuk keluarga
             sehat.
           </p>
         </div>
