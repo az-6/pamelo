@@ -4,9 +4,14 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "v0 App",
+  title: "Pamelia - Sabun Cuci Piring Alami",
   description: "Created with v0",
   generator: "v0.dev",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
